@@ -1,2 +1,2 @@
-# hotel-management-api
-A hotel management backend application. 
+# DAMZXYNO HOTEL AND SUITE 
+A hotel management backend api.  
