@@ -26,18 +26,15 @@ public class SwaggerConfig {
     private  ApiKey apikey(){
         return  new ApiKey("Secret Key", AUTHORIZATION_HEADER, "header");
     }
-    private  ApiKey accountNumber(){
-        return  new ApiKey("NUBAN", "NUBAN", "header");
-    }
 
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.harbinton.paymentservice"))
+                .apis(RequestHandlerSelectors.basePackage("com.damzxyno.hotelmanagementapi"))
                 .build()
-                .securitySchemes(Arrays.asList(apikey(), accountNumber()))
+                .securitySchemes(List.of(apikey()))
                 .securityContexts(List.of(securityContext()));
     }
 
@@ -55,8 +52,6 @@ public class SwaggerConfig {
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
 
-        return Arrays.asList(new SecurityReference("Secret Key", authorizationScopes),
-                new SecurityReference("NUBAN", authorizationScopes)
-                );
+        return List.of(new SecurityReference("Secret Key", authorizationScopes));
     }
 }
