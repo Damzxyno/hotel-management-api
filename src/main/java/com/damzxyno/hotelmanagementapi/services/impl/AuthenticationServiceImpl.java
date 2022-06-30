@@ -2,7 +2,7 @@ package com.damzxyno.hotelmanagementapi.services.impl;
 
 import com.damzxyno.hotelmanagementapi.dto.requests.LoginDetails;
 import com.damzxyno.hotelmanagementapi.exceptions.IncorrectPasswordException;
-import com.damzxyno.hotelmanagementapi.services.AuthenticationService;
+import com.damzxyno.hotelmanagementapi.services.interfaces.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;

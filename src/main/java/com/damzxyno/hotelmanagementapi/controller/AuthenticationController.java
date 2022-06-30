@@ -1,8 +1,8 @@
 package com.damzxyno.hotelmanagementapi.controller;
 
 import com.damzxyno.hotelmanagementapi.dto.requests.LoginDetails;
-import com.damzxyno.hotelmanagementapi.services.AuthenticationService;
-import com.damzxyno.hotelmanagementapi.services.UserService;
+import com.damzxyno.hotelmanagementapi.services.interfaces.AuthenticationService;
+import com.damzxyno.hotelmanagementapi.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
