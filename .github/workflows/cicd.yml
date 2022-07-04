@@ -21,6 +21,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:12-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: damzxy_hotel_and_suite_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -34,7 +47,7 @@ jobs:
       with:
         postgres_image_tag: 12-alpine
         app_user: postgres
-        app_user_password: password
+        app_user_password: postgres
         app_db: damzxy_hotel_and_suite_db
         postgres_extensions: uuid-ossp ltree    
         
